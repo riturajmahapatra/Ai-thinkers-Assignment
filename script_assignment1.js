@@ -38,27 +38,50 @@ heroSectionImg.style.height = '100vh';
 heroSectionImg.style.width = '100%';
 heroSection.appendChild(heroSectionImg);
 
+/* header function */
+function mainHeader(headerText, fontSize, fontWeight, color) {
+  const header = document.createElement('h1');
+  header.textContent = headerText;
+  header.style.fontSize = fontSize;
+  header.style.fontWeight = fontWeight;
+  header.style.color = color;
+  return header;
+}
+/* para function */
+function mainPara(paraText, fontSize, fontWeight) {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = paraText;
+  paragraph.style.fontSize = fontSize;
+  paragraph.style.fontWeight = fontWeight;
+  return paragraph;
+}
 const textContainer = document.createElement('div');
 textContainer.style.position = 'absolute';
-textContainer.style.top = '40%';
+textContainer.style.top = '30%';
 textContainer.style.left = '5%';
-textContainer.style.color = 'white';
-textContainer.style.zIndex = '9999';
-const textContent = document.createTextNode(
-  'Reliable way to get around the town'
-);
-const heroPara = document.createElement('p');
-heroPara.textContent =
-  'Whether you need a quick ride to the airport, a trip to a business meeting, or a night out on the town, our fleet of well-maintained taxis and professional drivers are at your service.';
-textContainer.style.fontSize = '4.5rem';
-textContainer.style.fontWeight = 'bold';
 textContainer.style.width = '50%';
-textContainer.appendChild(textContent);
-heroPara.style.fontSize = '1.2rem';
-heroPara.style.fontWeight = 'normal';
-textContainer.appendChild(heroPara);
-heroSection.append(textContainer);
+textContainer.style.color = 'white';
+textContainer.style.zIndex = '9';
+/* const textContent = document.createTextNode(
+  'Reliable way to get around the town'
+); */
+const header = mainHeader(
+  'Reliable way to get around the town',
+  '4.5vmax',
+  'bold',
+  'white'
+);
+textContainer.appendChild(header);
+const paragraph = mainPara(
+  'Whether you need a quick ride to the airport, a trip to a business meeting, or a night out on the town, our fleet of well-maintained taxis and professional drivers are at your service.',
+  '1.5vmax',
+  'normal'
+);
+paragraph.style.marginBlock = '10px';
+textContainer.appendChild(paragraph);
+heroSection.appendChild(textContainer);
 
+/* button function */
 function mainButton(btn_text) {
   const button = document.createElement('button');
   button.textContent = btn_text;
@@ -85,3 +108,82 @@ function mainButton(btn_text) {
 }
 const button = mainButton('Book My Ride');
 textContainer.appendChild(button);
+
+/* sectoin 2 */
+const heroSection2 = document.querySelector('.heroSection2');
+
+const sectionContainer1 = document.createElement('div');
+sectionContainer1.classList.add('container', 'text-center', 'p-12');
+
+sectionContainer1.style.width = '70%';
+sectionContainer1.style.color = 'white';
+sectionContainer1.style.zIndex = '9';
+const header2 = mainHeader(
+  'Your Safety And Convenience',
+  '4.5vmax',
+  'bold',
+  'white'
+);
+const paragraph2 = mainPara(
+  "We're available 24/7, so you can rely on us for last-minute travel needs.",
+  '1.5vmax',
+  'normal'
+);
+const button2 = mainButton('Book Your Ride');
+sectionContainer1.appendChild(header2);
+sectionContainer1.appendChild(paragraph2);
+heroSection2.appendChild(sectionContainer1);
+
+heroSection2.classList.add('text-center');
+heroSection2.appendChild(button2);
+
+/* img cards */
+function imgCard(imgSrc, imgAlt) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.style.width = '20rem';
+
+  const img = document.createElement('img');
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  img.setAttribute('src', imgSrc);
+  img.setAttribute('alt', imgAlt);
+  card.appendChild(img);
+  return card;
+}
+const flexContainer = document.createElement('div');
+flexContainer.classList.add('d-flex', 'justify-content-center', 'flex-wrap');
+flexContainer.style.gap = '40px';
+flexContainer.style.marginBlock = '50px';
+
+document.body.appendChild(flexContainer);
+
+const img1 = imgCard('./assets/asset 7.webp', 'Img1');
+flexContainer.appendChild(img1);
+const img2 = imgCard('./assets/asset 8.webp', 'Img1');
+img2.style.marginTop = '50px';
+img2.style.overflow = 'none';
+flexContainer.appendChild(img2);
+const img3 = imgCard('./assets/asset 9.webp', 'Img1');
+flexContainer.appendChild(img3);
+
+/* big card with content on left and picture on right */
+const cardContainer = document.createElement('div');
+cardContainer.classList.add('card', 'mb-3', 'container');
+cardContainer.style.backgroundColor = '#2D2D2D';
+
+const cardContainer2 = document.createElement('div');
+cardContainer2.classList.add('card-body');
+
+const header3 = document.createElement('h1');
+header3.style.fontSize = '2.5vmax';
+header3.textContent = 'Ensuring You Have A Comfortable Trip';
+
+const paragraph3 = document.createElement('p');
+paragraph3.classList.add('card-text');
+paragraph3.textContent =
+  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.";
+cardContainer2.appendChild(header3);
+cardContainer.appendChild(cardContainer2);
+document.body.appendChild(cardContainer);
