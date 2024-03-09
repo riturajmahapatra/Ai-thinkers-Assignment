@@ -202,45 +202,126 @@ flexContainer.appendChild(img3);
 
 /* big card with content on left and picture on right */
 const cardContainer = document.createElement('div');
-cardContainer.classList.add('card', 'mb-3', 'container');
+cardContainer.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap',
+  'rounded-xl',
+  'mb-5'
+);
 cardContainer.style.backgroundColor = '#2D2D2D';
-
 cardContainer.style.padding = '40px';
 
-const cardContainer2 = document.createElement('div');
-const header3 = document.createElement('h1');
-header3.style.fontSize = '3.5vmax';
-header3.textContent = 'Ensuring You Have A Comfortable Trip';
-
-const paragraph3 = document.createElement('p');
-paragraph3.classList.add('card-text');
-paragraph3.style.marginBlock = '12px';
-paragraph3.style.fontSize = '1.3vmax';
-paragraph3.textContent =
-  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.";
-const button3 = mainButton('Book My Ride');
-textContainer.appendChild(button3);
-cardContainer2.style.marginBottom = '20px';
-cardContainer2.appendChild(header3);
-cardContainer2.appendChild(paragraph3);
-cardContainer2.appendChild(button3);
-cardContainer.appendChild(cardContainer2);
-/* img div */
 const imgContainer = document.createElement('div');
-const img4 = document.createElement('img');
-img4.setAttribute('src', './assets/asset 7.webp');
-img4.setAttribute('alt', 'Img1');
-img4.setAttribute('width', '30%');
 
+const img4 = document.createElement('img');
+img4.setAttribute('src', './assets/taxi4.PNG');
+img4.setAttribute('alt', 'hi');
 imgContainer.appendChild(img4);
+cardContainer.appendChild(imgContainer);
+
+const cardContent1 = document.createElement('div');
+/*  header and para functions*/
+const header3 = mainHeader(
+  'Ensuring You Have A Comfortable Journey',
+  '3vmax',
+  'bold',
+  'white'
+);
+cardContent1.appendChild(header3);
+const paragraph3 = mainPara(
+  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.",
+  '1.3vmax',
+  'normal'
+);
+cardContent1.appendChild(paragraph3);
+
+const button3 = mainButton('Book My Ride');
+
+cardContent1.appendChild(paragraph3);
+cardContent1.appendChild(button3);
+/* img div */
+
 // imgContainer.classList.add('red');
 // cardContainer.classList.add('red');
-// cardContainer2.classList.add('red');
+// cardContent1.classList.add('red');
 
-const cardContents = document.createElement('div');
-
+cardContainer.appendChild(cardContent1);
 cardContainer.appendChild(imgContainer);
 document.body.appendChild(cardContainer);
+
+const appSection2 = document.createElement('div');
+appSection2.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap'
+);
+appSection2.style.backgroundColor = '#2d2d2d';
+const appSectionImg1 = document.createElement('div');
+const img6 = document.createElement('img');
+img6.setAttribute('src', './assets/taxi4.PNG');
+img6.setAttribute('alt', 'hi');
+appSectionImg1.appendChild(img6);
+appSection2.appendChild(appSectionImg1);
+document.body.appendChild(appSection2);
+/* 
+const appSection1 = document.createElement('div');
+appSection1.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap'
+);
+appSection1.style.backgroundColor = '#2D2D2D';
+
+const appSectionImg1 = document.createElement('div');
+const img5 = document.createElement('img');
+img5.setAttribute('src', './assets/taxi4.PNG');
+img5.setAttribute('alt', 'hi');
+appSectionImg1.appendChild(img5);
+appSection1.appendChild(appSectionImg1);
+
+const appContent1 = document.createElement('div');
+const header8 = mainHeader(
+  'Ensuring You Have A Comfortable Journey',
+  '3vmax',
+  'bold',
+  'white'
+);
+appContent.appendChild(header8);
+const paragraph8 = mainPara(
+  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.",
+  '1.3vmax',
+  'normal'
+);
+
+appContent.appendChild(paragraph8);
+
+
+appContent1.style.width = '60%';
+appContent1.style.padding = '60px';
+paragraph8.style.marginBlock = '25px';
+
+const btns1 = document.createElement('div');
+btns1.style.display = 'flex';
+btns1.style.marginTop = '20px';
+btns1.style.gap = '20px';
+const button8 = mainButton('App Store');
+const button9 = mainButton('Play Store');
+
+btns1.appendChild(button8);
+btns1.appendChild(button9);
+appContent1.appendChild(btns);
+appSection1.style.marginBlock = '30px';
+appSection1.appendChild(appContent1);
+document.body.appendChild(appSection1);
+
+*/
 
 /* our services */
 const serviceElement = document.createElement('div');
@@ -481,9 +562,21 @@ liElement1.innerHTML = `<li>\u2022 Convenient application</li><br><li>\u2022 Qua
 ulElement1.appendChild(liElement1);
 appContent.appendChild(paragraph7);
 appContent.appendChild(ulElement1);
-appContent.classList.add('red');
+
 appContent.style.width = '60%';
 appContent.style.padding = '60px';
 paragraph7.style.marginBlock = '25px';
+
+const btns = document.createElement('div');
+btns.style.display = 'flex';
+btns.style.marginTop = '20px';
+btns.style.gap = '20px';
+const button6 = mainButton('App Store');
+const button7 = mainButton('Play Store');
+
+btns.appendChild(button6);
+btns.appendChild(button7);
+appContent.appendChild(btns);
+appSection.style.marginBlock = '30px';
 appSection.appendChild(appContent);
 document.body.appendChild(appSection);
