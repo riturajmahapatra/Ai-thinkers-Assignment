@@ -354,3 +354,136 @@ textContainer1.appendChild(button4);
 heroSection3.appendChild(textContainer1);
 heroSection3.appendChild(heroSectionImg1);
 document.body.appendChild(heroSection3);
+
+/* car rentals */
+
+const carRentalElement = document.createElement('div');
+carRentalElement.classList.add('container', 'mx-auto');
+
+const carContent = document.createElement('div');
+const header6 = mainHeader('Car Rentals', '3vmax', 'bold', 'white');
+carContent.appendChild(header6);
+const paragraph6 = mainPara(
+  "We're available 24/7, so you can rely on us for last-minute travel needs.  ",
+  '1.3vmax',
+  'normal'
+);
+carContent.appendChild(paragraph6);
+carRentalElement.appendChild(carContent);
+
+const btnElement = document.createElement('div');
+const button5 = mainButton('View All');
+btnElement.appendChild(button5);
+carRentalElement.appendChild(btnElement);
+paragraph6.style.marginBlock = '20px';
+carRentalElement.classList.add('d-flex', 'justify-content-between');
+document.body.appendChild(carRentalElement);
+
+/* car rental cards */
+
+const carRentalCards = document.createElement('div');
+carRentalCards.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap'
+);
+/* small cards function used */
+function smallCarCards(imgsrc, headerTxt, paraTxt) {
+  const scard1 = document.createElement('div');
+  scard1.classList.add('card', 'text-left', 'm-3');
+  scard1.style.width = '350px';
+  scard1.style.backgroundColor = '#2D2D2D';
+  const simg1 = document.createElement('img');
+  simg1.style.objectFit = 'cover';
+  simg1.classList.add('card-img-top');
+  simg1.setAttribute('src', imgsrc);
+  simg1.setAttribute('alt', 'img1');
+  simg1.style.width = '100%';
+  simg1.style.height = '200px';
+
+  const sheader1 = document.createElement('h1');
+  sheader1.textContent = headerTxt;
+  sheader1.style.fontSize = '2.5vmax';
+  sheader1.style.fontWeight = 'bold';
+  sheader1.style.marginBlock = '20px';
+  sheader1.style.paddingLeft = '20px';
+  const spara1 = document.createElement('p');
+  spara1.innerHTML = paraTxt.replace(/(\n)/g, '<br>'); //used innerHtml over textContent as it provides us to play with the br rtags and \n
+  spara1.style.paddingLeft = '20px';
+  spara1.style.marginBottom = '20px';
+
+  scard1.appendChild(simg1);
+  scard1.appendChild(sheader1);
+  scard1.appendChild(spara1);
+  return scard1;
+}
+
+const carCard1 = smallCarCards(
+  './assets/asset 27.jpeg',
+  'Ampera Helix GT',
+  `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
+);
+const carCard2 = smallCarCards(
+  './assets/asset 28.jpeg',
+  'Nexaro CG6',
+  `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
+);
+const carCard3 = smallCarCards(
+  './assets/asset 29.jpeg',
+  'Ampera Axia',
+  `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
+);
+
+carRentalCards.appendChild(carCard1);
+carRentalCards.appendChild(carCard2);
+carRentalCards.appendChild(carCard3);
+
+document.body.appendChild(carRentalCards);
+
+/* app secrtion */
+const appSection = document.createElement('div');
+appSection.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap'
+);
+appSection.style.backgroundColor = '#2D2D2D';
+
+const appSectionImg = document.createElement('div');
+const img5 = document.createElement('img');
+img5.setAttribute('src', './assets/taxi4.PNG');
+img5.setAttribute('alt', 'hi');
+appSectionImg.appendChild(img5);
+appSection.appendChild(appSectionImg);
+
+/* content area */
+const appContent = document.createElement('div');
+const header7 = mainHeader(
+  'Ensuring You Have A Comfortable Journey',
+  '3vmax',
+  'bold',
+  'white'
+);
+appContent.appendChild(header7);
+const paragraph7 = mainPara(
+  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.",
+  '1.3vmax',
+  'normal'
+);
+const ulElement1 = document.createElement('ul');
+const liElement1 = document.createElement('li');
+liElement1.innerHTML = `<li>\u2022 Convenient application</li><br><li>\u2022 Quality and comfort in every trip</li><br><li>\u2022 Skilled drivers</li>
+`;
+ulElement1.appendChild(liElement1);
+appContent.appendChild(paragraph7);
+appContent.appendChild(ulElement1);
+appContent.classList.add('red');
+appContent.style.width = '60%';
+appContent.style.padding = '60px';
+paragraph7.style.marginBlock = '25px';
+appSection.appendChild(appContent);
+document.body.appendChild(appSection);
