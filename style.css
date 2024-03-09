@@ -13,3 +13,6 @@ body {
 .heading {
   z-index: 10;
 }
+.red {
+  border: 1px solid red;
+}
