@@ -23,7 +23,7 @@ document.documentElement.appendChild(bodyElement);
 const logoContainer = document.createElement('div');
 logoContainer.classList.add('navbar-brand');
 const logoImage = document.createElement('img');
-logoImage.setAttribute('src', './assets/asset 0.svg');
+logoImage.setAttribute('src', 'asset 0.svg');
 logoImage.setAttribute('alt', 'logo');
 logoImage.classList.add('h-8', 'w-auto', 'mr-2');
 logoContainer.appendChild(logoImage);
@@ -55,6 +55,11 @@ linkText.forEach((text) => {
 });
 navElement.appendChild(ulElement);
 /* navBtn */
+const link6 = document.createElement('div');
+link6.innerHTML = `<i class="ri-search-line"></i>&nbsp &nbsp <i class="ri-shopping-cart-2-line"></i>`;
+link6.style.textAlign = 'right';
+
+navElement.appendChild(link6);
 const navBtn = mainButton('Book My Ride');
 navBtn.classList.add('ms-auto');
 navElement.appendChild(navBtn);
@@ -62,7 +67,7 @@ navElement.appendChild(navBtn);
 const heroSection = document.querySelector('.Hero');
 /* taxi img */
 const heroSectionImg = document.createElement('img');
-heroSectionImg.setAttribute('src', './assets/taxi.jpg');
+heroSectionImg.setAttribute('src', 'taxi.jpg');
 heroSectionImg.setAttribute('alt', 'taxi.jpg');
 heroSectionImg.style.height = '50vmax';
 heroSectionImg.style.width = '100%';
@@ -89,7 +94,7 @@ function mainHeader(headerText, fontSize, fontWeight, color) {
 
 function mainPara(paraText, fontSize, fontWeight) {
   const paragraph = document.createElement('p');
-  paragraph.textContent = paraText;
+  paragraph.innerHTML = paraText;
   paragraph.style.fontSize = fontSize;
   paragraph.style.fontWeight = fontWeight;
   return paragraph;
@@ -172,12 +177,12 @@ heroSection2.appendChild(button2);
 /* img cards */
 function imgCard(imgSrc, imgAlt) {
   const card = document.createElement('div');
-  card.classList.add('card', 'red');
+  card.classList.add('card');
   card.style.width = '20rem';
 
   const img = document.createElement('img');
   img.style.width = '100%';
-  img.style.height = '100%';
+  img.style.height = '500px';
   img.style.objectFit = 'cover';
   img.setAttribute('src', imgSrc);
   img.setAttribute('alt', imgAlt);
@@ -191,13 +196,13 @@ flexContainer.style.marginBlock = '50px';
 
 document.body.appendChild(flexContainer);
 
-const img1 = imgCard('./assets/asset 7.webp', 'Img1');
+const img1 = imgCard('asset 7.webp', 'Img1');
 flexContainer.appendChild(img1);
-const img2 = imgCard('./assets/asset 8.webp', 'Img1');
+const img2 = imgCard('asset 8.webp', 'Img1');
 
 img2.style.overflow = 'none';
 flexContainer.appendChild(img2);
-const img3 = imgCard('./assets/asset 9.webp', 'Img1');
+const img3 = imgCard('asset 9.webp', 'Img1');
 flexContainer.appendChild(img3);
 
 /* big card with content on left and picture on right */
@@ -215,7 +220,7 @@ appSection2.classList.add(
 appSection2.style.backgroundColor = '#2d2d2d';
 const appSectionImg1 = document.createElement('div');
 const img6 = document.createElement('img');
-img6.setAttribute('src', './assets/asset 10.webp');
+img6.setAttribute('src', 'asset 10.webp');
 img6.setAttribute('alt', 'hi');
 appSectionImg1.appendChild(img6);
 appSectionImg1.style.width = '40%';
@@ -238,9 +243,11 @@ const paragraph8 = mainPara(
   'normal'
 );
 const btns1 = document.createElement('div');
+btns1.style.display = 'flex';
+btns1.style.marginTop = '20px';
+btns1.style.gap = '20px';
 const button8 = mainButton('About us');
 const button9 = mainButton('Explore More');
-button8.style.marginRight = '20px';
 btns1.appendChild(button8);
 btns1.appendChild(button9);
 
@@ -304,17 +311,17 @@ function smallCards(imgsrc, headerTxt, paraTxt) {
   return scard1;
 }
 const card1 = smallCards(
-  './assets/asset 16.svg',
+  'asset 16.svg',
   'Airport Transfer',
   'Well-maintained taxis and professional drivers are at your service.'
 );
 const card2 = smallCards(
-  './assets/asset 17.svg',
+  'asset 17.svg',
   'Airport Transfer',
   'Well-maintained taxis and professional drivers are at your service.'
 );
 const card3 = smallCards(
-  './assets/asset 18.svg',
+  'asset 18.svg',
   'Airport Transfer',
   'Well-maintained taxis and professional drivers are at your service.'
 );
@@ -331,7 +338,7 @@ heroSection3.style.marginBlock = '70px';
 heroSection3.style.position = 'relative';
 /* taxi img */
 const heroSectionImg1 = document.createElement('img');
-heroSectionImg1.setAttribute('src', './assets/taxi2.jpg');
+heroSectionImg1.setAttribute('src', 'taxi2.jpg');
 heroSectionImg1.setAttribute('alt', 'taxi2.jpg');
 heroSectionImg1.style.height = '30vmax';
 heroSectionImg1.style.width = '100%';
@@ -433,17 +440,17 @@ function smallCarCards(imgsrc, headerTxt, paraTxt) {
 }
 
 const carCard1 = smallCarCards(
-  './assets/asset 27.jpeg',
+  'asset 27.jpeg',
   'Ampera Helix GT',
   `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
 );
 const carCard2 = smallCarCards(
-  './assets/asset 28.jpeg',
+  'asset 28.jpeg',
   'Nexaro CG6',
   `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
 );
 const carCard3 = smallCarCards(
-  './assets/asset 29.jpeg',
+  'asset 29.jpeg',
   'Ampera Axia',
   `Daily Rate: $2.50\n Weekly Rate: $0.50<br>Monthly Rate: $0.50`
 );
@@ -467,7 +474,7 @@ appSection.style.backgroundColor = '#2D2D2D';
 
 const appSectionImg = document.createElement('div');
 const img5 = document.createElement('img');
-img5.setAttribute('src', './assets/taxi4.PNG');
+img5.setAttribute('src', 'taxi4.PNG');
 img5.setAttribute('alt', 'hi');
 appSectionImg.appendChild(img5);
 appSection.appendChild(appSectionImg);
@@ -522,8 +529,94 @@ footerSection.classList.add(
   'd-flex',
   'justify-content-center',
   'flex-wrap',
-  'rounded-xl',
-  'mb-5'
+  'mb-10',
+  'mt-20'
 );
 
 const footerSection1 = document.createElement('div');
+footerSection1.classList.add('col-md-3', 'col-sm-12');
+const footerImg = document.createElement('div');
+const img7 = document.createElement('img');
+img7.setAttribute('src', 'asset 0.svg');
+img7.setAttribute('alt', 'logo');
+img7.style.width = '55px';
+footerImg.appendChild(img7);
+footerSection1.appendChild(footerImg);
+
+const footerPara = mainPara(
+  'We offer competitive rates for both our taxi and car rental services. <br><br><i class="ri-mail-line"></i> mail@gmail.com',
+  '1.3vmax',
+  'normal'
+);
+footerPara.style.marginBlock = '25px';
+
+const footerSection2 = document.createElement('div');
+footerSection2.classList.add('col-md-5', 'col-sm-12');
+footerSection2.style.width = '35%';
+const footerLinks = document.createElement('div');
+footerLinks.style.display = 'flex';
+footerLinks.style.gap = '50px';
+footerLinks.style.padding = '40px';
+footerLinks.style.fontSize = '1.3vmax';
+const link1 = document.createElement('div');
+link1.innerHTML =
+  '<strong> Demos </strong><br><br> Home 1 <br> Home 2 <br> Home 3';
+const link2 = document.createElement('div');
+link2.innerHTML =
+  '<strong> About </strong><br><br> About us <br> Privacy <br> Pricing';
+const link3 = document.createElement('div');
+link3.innerHTML =
+  '<strong> Service </strong><br><br> Taxi <br> Car Rentals<br> All Service';
+
+footerLinks.appendChild(link1);
+footerLinks.appendChild(link2);
+footerLinks.appendChild(link3);
+
+const footerSection3 = document.createElement('div');
+footerSection3.classList.add('col-md-4', 'col-sm-12');
+footerSection3.style.width = '35%';
+footerSection3.style.padding = '40px';
+const footerSection3Text = mainPara(
+  '<stong>(309) 077-0007</strong> <br> Available 24/7, feel free to contact us! ',
+  '1.5vmax',
+  'bold'
+);
+
+const footerBtn = mainButton('Book Ride Now');
+footerSection3.appendChild(footerSection3Text);
+footerSection3Text.style.marginBottom = '20px';
+footerSection3.appendChild(footerBtn);
+
+footerSection2.appendChild(footerLinks);
+footerSection1.appendChild(footerPara);
+footerSection.appendChild(footerSection1);
+footerSection.appendChild(footerSection2);
+footerSection.appendChild(footerSection3);
+document.body.appendChild(footerSection);
+
+const socials = document.createElement('div');
+const br = document.createElement('div');
+br.classList.add('container', 'mx-auto', 'grey', 'mb-12');
+socials.appendChild(br);
+
+const socialMedia = document.createElement('div');
+socialMedia.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'flex-wrap',
+  'justify-content-between',
+  'mb-10'
+);
+
+const link4 = document.createElement('div');
+link4.innerHTML = `<i class="ri-facebook-circle-fill"></i>&nbsp &nbsp<i class="ri-instagram-line"></i>&nbsp &nbsp<i class="ri-twitter-x-fill"></i>`;
+const link5 = document.createElement('div');
+link5.innerHTML = `© Taxi 128. All Rights Reserved 2024.
+<br>
+Licensing Webflow Templatesby 128.digital. Powered by Webflow`;
+link5.style.textAlign = 'right';
+socialMedia.appendChild(link4);
+socialMedia.appendChild(link5);
+socials.appendChild(socialMedia);
+document.body.appendChild(socials);

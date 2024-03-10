@@ -16,3 +16,6 @@ body {
 .red {
   border: 1px solid red;
 }
+.grey {
+  border: 1px solid #afafaf;
+}
