@@ -172,7 +172,7 @@ heroSection2.appendChild(button2);
 /* img cards */
 function imgCard(imgSrc, imgAlt) {
   const card = document.createElement('div');
-  card.classList.add('card');
+  card.classList.add('card', 'red');
   card.style.width = '20rem';
 
   const img = document.createElement('img');
@@ -194,15 +194,16 @@ document.body.appendChild(flexContainer);
 const img1 = imgCard('./assets/asset 7.webp', 'Img1');
 flexContainer.appendChild(img1);
 const img2 = imgCard('./assets/asset 8.webp', 'Img1');
-img2.style.marginTop = '50px';
+
 img2.style.overflow = 'none';
 flexContainer.appendChild(img2);
 const img3 = imgCard('./assets/asset 9.webp', 'Img1');
 flexContainer.appendChild(img3);
 
 /* big card with content on left and picture on right */
-const cardContainer = document.createElement('div');
-cardContainer.classList.add(
+
+const appSection2 = document.createElement('div');
+appSection2.classList.add(
   'container',
   'mx-auto',
   'd-flex',
@@ -211,117 +212,47 @@ cardContainer.classList.add(
   'rounded-xl',
   'mb-5'
 );
-cardContainer.style.backgroundColor = '#2D2D2D';
-cardContainer.style.padding = '40px';
-
-const imgContainer = document.createElement('div');
-
-const img4 = document.createElement('img');
-img4.setAttribute('src', './assets/taxi4.PNG');
-img4.setAttribute('alt', 'hi');
-imgContainer.appendChild(img4);
-cardContainer.appendChild(imgContainer);
-
-const cardContent1 = document.createElement('div');
-/*  header and para functions*/
-const header3 = mainHeader(
-  'Ensuring You Have A Comfortable Journey',
-  '3vmax',
-  'bold',
-  'white'
-);
-cardContent1.appendChild(header3);
-const paragraph3 = mainPara(
-  "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.",
-  '1.3vmax',
-  'normal'
-);
-cardContent1.appendChild(paragraph3);
-
-const button3 = mainButton('Book My Ride');
-
-cardContent1.appendChild(paragraph3);
-cardContent1.appendChild(button3);
-/* img div */
-
-// imgContainer.classList.add('red');
-// cardContainer.classList.add('red');
-// cardContent1.classList.add('red');
-
-cardContainer.appendChild(cardContent1);
-cardContainer.appendChild(imgContainer);
-document.body.appendChild(cardContainer);
-
-const appSection2 = document.createElement('div');
-appSection2.classList.add(
-  'container',
-  'mx-auto',
-  'd-flex',
-  'justify-content-center',
-  'flex-wrap'
-);
 appSection2.style.backgroundColor = '#2d2d2d';
 const appSectionImg1 = document.createElement('div');
 const img6 = document.createElement('img');
-img6.setAttribute('src', './assets/taxi4.PNG');
+img6.setAttribute('src', './assets/asset 10.webp');
 img6.setAttribute('alt', 'hi');
 appSectionImg1.appendChild(img6);
-appSection2.appendChild(appSectionImg1);
-document.body.appendChild(appSection2);
-/* 
-const appSection1 = document.createElement('div');
-appSection1.classList.add(
-  'container',
-  'mx-auto',
+appSectionImg1.style.width = '40%';
+appSectionImg1.classList.add(
   'd-flex',
   'justify-content-center',
-  'flex-wrap'
+  'align-items-center',
+  'pr-5'
 );
-appSection1.style.backgroundColor = '#2D2D2D';
-
-const appSectionImg1 = document.createElement('div');
-const img5 = document.createElement('img');
-img5.setAttribute('src', './assets/taxi4.PNG');
-img5.setAttribute('alt', 'hi');
-appSectionImg1.appendChild(img5);
-appSection1.appendChild(appSectionImg1);
-
-const appContent1 = document.createElement('div');
+const appSectionContent1 = document.createElement('div');
 const header8 = mainHeader(
   'Ensuring You Have A Comfortable Journey',
   '3vmax',
   'bold',
   'white'
 );
-appContent.appendChild(header8);
 const paragraph8 = mainPara(
   "Our user-friendly website and mobile app make it effortless to book a taxi or car rental. We're available 24/7, so you can rely on us for last-minute travel needs.",
   '1.3vmax',
   'normal'
 );
-
-appContent.appendChild(paragraph8);
-
-
-appContent1.style.width = '60%';
-appContent1.style.padding = '60px';
-paragraph8.style.marginBlock = '25px';
-
 const btns1 = document.createElement('div');
-btns1.style.display = 'flex';
-btns1.style.marginTop = '20px';
-btns1.style.gap = '20px';
-const button8 = mainButton('App Store');
-const button9 = mainButton('Play Store');
-
+const button8 = mainButton('About us');
+const button9 = mainButton('Explore More');
+button8.style.marginRight = '20px';
 btns1.appendChild(button8);
 btns1.appendChild(button9);
-appContent1.appendChild(btns);
-appSection1.style.marginBlock = '30px';
-appSection1.appendChild(appContent1);
-document.body.appendChild(appSection1);
 
-*/
+appSectionContent1.style.padding = '80px';
+paragraph8.style.marginBlock = '20px';
+appSectionContent1.style.width = '60%';
+appSectionContent1.appendChild(header8);
+appSectionContent1.appendChild(paragraph8);
+appSectionContent1.appendChild(btns1);
+appSection2.appendChild(appSectionContent1);
+appSection2.appendChild(appSectionImg1);
+document.body.appendChild(appSection2);
 
 /* our services */
 const serviceElement = document.createElement('div');
@@ -580,3 +511,19 @@ appContent.appendChild(btns);
 appSection.style.marginBlock = '30px';
 appSection.appendChild(appContent);
 document.body.appendChild(appSection);
+
+/* footer */
+/* decided on using priority divs and array serction of foreach in links or insted can do innerHTML */
+
+const footerSection = document.createElement('div');
+footerSection.classList.add(
+  'container',
+  'mx-auto',
+  'd-flex',
+  'justify-content-center',
+  'flex-wrap',
+  'rounded-xl',
+  'mb-5'
+);
+
+const footerSection1 = document.createElement('div');
